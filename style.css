@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 /* ========================================
    VARIABEL & KONFIGURASI GLOBAL
    ======================================== */
+=======
+/*========= Variabel CSS untuk tema terminal =========*/
+>>>>>>> 213c6e56385e8f29f3a28ef15b400aa16f83e920
 :root {
   --bg: #040608;
   --panel: #071018;
@@ -12,9 +16,13 @@
   --maxw: 1100px;
 }
 
+<<<<<<< HEAD
 /* ========================================
    RESET & STYLES DASAR
    ======================================== */
+=======
+/*========= Reset dan styling dasar =========*/
+>>>>>>> 213c6e56385e8f29f3a28ef15b400aa16f83e920
 * {
   box-sizing: border-box;
 }
@@ -23,9 +31,14 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: var(--mono);
+<<<<<<< HEAD
   background: 
     radial-gradient(1200px 600px at 10% 10%, rgba(59, 230, 176, 0.02), transparent),
     linear-gradient(180deg, #030509 0%, #071018 100%);
+=======
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(59, 230, 176, 0.02), transparent),
+              linear-gradient(180deg, #030509 0%, #071018 100%);
+>>>>>>> 213c6e56385e8f29f3a28ef15b400aa16f83e920
   color: #cfeee6;
 }
 
@@ -34,9 +47,13 @@ a {
   text-decoration: none;
 }
 
+<<<<<<< HEAD
 /* ========================================
    KOMPONEN UTAMA
    ======================================== */
+=======
+/*========= Layout utama =========*/
+>>>>>>> 213c6e56385e8f29f3a28ef15b400aa16f83e920
 .wrap {
   max-width: var(--maxw);
   margin: 36px auto;
@@ -53,12 +70,19 @@ a {
   gap: 20px;
 }
 
+<<<<<<< HEAD
 /* ========================================
    TERMINAL/CODE VIEWER
    ======================================== */
 .terminal {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35));
   border-radius: var(--radius);
+=======
+/*========= Styling terminal =========*/
+.terminal {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35));
+  border-radius: 12px;
+>>>>>>> 213c6e56385e8f29f3a28ef15b400aa16f83e920
   padding: 18px;
   border: 1px solid rgba(255, 255, 255, 0.03);
   min-height: 520px;
@@ -122,21 +146,31 @@ a {
   vertical-align: middle;
 }
 
+<<<<<<< HEAD
 /* ========================================
    ANIMASI
    ======================================== */
+=======
+>>>>>>> 213c6e56385e8f29f3a28ef15b400aa16f83e920
 @keyframes blink {
   50% {
     opacity: 0;
   }
 }
 
+<<<<<<< HEAD
 /* ========================================
    PROFILE CARD
    ======================================== */
 .card {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.005));
   border-radius: var(--radius);
+=======
+/*========= Styling kartu profil =========*/
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.005));
+  border-radius: 12px;
+>>>>>>> 213c6e56385e8f29f3a28ef15b400aa16f83e920
   padding: 18px;
   border: 1px solid rgba(255, 255, 255, 0.03);
   position: sticky;
@@ -222,9 +256,13 @@ h1 {
   box-shadow: 0 8px 24px var(--glow);
 }
 
+<<<<<<< HEAD
 /* ========================================
    SYNTAX HIGHLIGHTING
    ======================================== */
+=======
+/*========= Highlighting untuk kode =========*/
+>>>>>>> 213c6e56385e8f29f3a28ef15b400aa16f83e920
 .code .k {
   color: #8be9b7; /* keyword */
 }
@@ -241,18 +279,30 @@ h1 {
   color: #e6fffb; /* normal */
 }
 
+<<<<<<< HEAD
 /* ========================================
    RESPONSIVE DESIGN
    ======================================== */
+=======
+/*========= Responsive design =========*/
+>>>>>>> 213c6e56385e8f29f3a28ef15b400aa16f83e920
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 213c6e56385e8f29f3a28ef15b400aa16f83e920
   .card {
     position: relative;
     top: auto;
     height: auto;
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 213c6e56385e8f29f3a28ef15b400aa16f83e920
