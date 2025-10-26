@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>erry triranaya — Terminal CV</title>
+  <meta name="description" content="CV erry triranaya — Hacker / Terminal style" />
+  <style>
+    :root{
+      --bg:#040608;
+      --panel:#071018;
+      --muted:#8aa0a0;
+      --accent:#3be6b0;
+      --glow: rgba(59,230,176,0.12);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+      --radius:12px;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:var(--mono);background:
+      radial-gradient(1200px 600px at 10% 10%, rgba(59,230,176,0.02), transparent),
+      linear-gradient(180deg,#030509 0%, #071018 100%);color:#cfeee6}
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:36px auto;padding:20px;border-radius:16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+      border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 50px rgba(0,0,0,0.6)}
+    .grid{display:grid;grid-template-columns: 1fr 380px; gap:20px}
+    /* Left: terminal/code */
+    .terminal{
+      background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.35));
+      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03);
+      min-height:520px;position:relative;overflow:hidden;
+    }
+    .term-header{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+    .dot{width:12px;height:12px;border-radius:50%;}
+    .dot.red{background:#ff6b6b;box-shadow:0 0 8px rgba(255,107,107,0.15)}
+    .dot.yellow{background:#ffd166;box-shadow:0 0 8px rgba(255,209,102,0.08)}
+    .dot.green{background:#6ee7b7;box-shadow:0 0 10px rgba(110,231,183,0.12)}
+    .term-body{font-size:13px;line-height:1.5;color:#a7dcd0;white-space:pre-wrap}
+    .prompt{color:var(--muted);margin-bottom:6px}
+    .typed { display:inline; color:#e6fffb }
+    .cursor{display:inline-block;background:var(--accent);width:8px;height:16px;margin-left:6px;
+      animation: blink 1s steps(2,start) infinite;border-radius:2px;vertical-align:middle}
+    @keyframes blink {50% {opacity:0}}
+    /* Right: profile */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03);
+      position:sticky;top:24px;height:520px;display:flex;flex-direction:column;gap:12px;
+    }
+    .avatar{
+      width:88px;height:88px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#29c49a);
+      display:flex;align-items:center;justify-content:center;font-weight:800;color:#021614;font-size:22px;box-shadow:0 8px 30px rgba(0,0,0,0.6)
+    }
+    h1{margin:0;font-size:20px}
+    .role{color:var(--muted);font-size:13px;margin-top:4px}
+    .section-title{font-size:12px;color:var(--muted);margin-top:10px;margin-bottom:6px;font-weight:700}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:12px;color:var(--muted)}
+    .meta{font-size:13px;color:#bfeee0}
+    .actions{display:flex;gap:8px;margin-top:auto}
+    .btn{padding:10px 12px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);cursor:pointer;color:inherit;font-weight:700}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#2fcf9f);color:#071710;border:0;box-shadow:0 8px 24px var(--glow)}
+    /* fake code highlight */
+    .code .k { color:#8be9b7 } /* keyword */
+    .code .s { color:#9acbd3 } /* string */
+    .code .c { color:#6f8d86 } /* comment */
+    .code .n { color:#e6fffb } /* normal */
+    /* small responsive */
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr;gap:12px}
+      .card{position:relative;top:auto;height:auto}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="grid">
+      <!-- LEFT: Terminal / Code -->
+      <div class="terminal" aria-live="polite">
+        <div class="term-header">
+          <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+          <div style="margin-left:8px;color:var(--muted);font-size:12px">TriNerry@local: ~ /cv</div>
+        </div>
+
+        <div class="term-body">
+          <div class="prompt">&gt; <span class="c"># membuka profil</span></div>
+          <div class="code" id="typed-area">
+<span class="k">const</span> <span class="n">profile</span> = <span class="s">&#123;</span>
+  <span class="c">// nama & role</span>
+  <span class="n">name</span>: <span class="s">"erry triranaya"</span>,
+  <span class="n">role</span>: <span class="s">"IT / Software • Security"</span>,
+
+  <span class="c">// skills</span>
+  <span class="n">skills</span>: <span class="s">["Python","Docker","Kubernetes","Linux","Pentest"]</span>,
+
+  <span class="c">// projects</span>
+  <span class="n">projects</span>: <span class="s">[
+    "Automation CI/CD", "Secure Web App"
+  ]</span>
+<span class="s">&#125;</span>
+
+<span class="c">// tekan tombol untuk download CV</span>
+          </div>
+
+          <div style="margin-top:12px" class="prompt">&gt; <span class="c"># live preview</span></div>
+          <div style="margin-top:8px;color:var(--muted);font-size:13px">
+            <span class="typed" id="line1"></span><span class="cursor" id="cursor1"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Profile card -->
+      <aside class="card">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="avatar" id="avatar">TN</div>
+          <div>
+            <h1 id="fullname">Erry Triranaya</h1>
+            <div class="role" id="role">IT • Web development • finance</div>
+          </div>
+        </div>
+
+        <div class="section-title">About</div>
+        <div class="meta" id="bio">Seorang engineer yang fokus belajar supaya lebih baik</div>
+
+        <div class="section-title">Top Skills</div>
+        <div class="chips" id="skills">
+          <div class="chip">html</div>
+          <div class="chip">finance</div>
+          <div class="chip">engineer electrical</div>
+          <div class="chip">windows</div>
+        </div>
+
+        <div class="section-title">Contact</div>
+        <div class="meta">
+          <div>Email: <a href="mailto:errytriranaya22@gmail.com">errytriranaya22@gmail.com</a></div>
+          <div>GitHub: <a href="https://github.com/Skyangle1" target="_blank">github.com/Skyangle1</a></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" onclick="downloadPDF()">Download CV (PDF)</button>
+          <button class="btn" onclick="toggleTheme()">Switch Theme</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    // Typing effect for the "live preview" line
+    const lines = [
+      "memuat... system.ok();",
+      "menampilkan profil: Erry triranaya",
+      "skills: Python | Docker | Kubernetes | Pentest | finance",
+      "project: Automation CI/CD, Secure Web App",
+      "status: available_for_hire"
+    ];
+    let i = 0, pos = 0;
+    const speed = 28;
+    const lineEl = document.getElementById('line1');
+    const cursor = document.getElementById('cursor1');
+
+    function typeLoop(){
+      if(i >= lines.length) { i = 0; }
+      const current = lines[i];
+      if(pos <= current.length){
+        lineEl.textContent = current.slice(0, pos);
+        pos++;
+        setTimeout(typeLoop, speed);
+      } else {
+        // pause then delete
+        setTimeout(() => deleteLoop(), 900);
+      }
+    }
+    function deleteLoop(){
+      const current = lines[i];
+      if(pos > 0){
+        pos--;
+        lineEl.textContent = current.slice(0, pos);
+        setTimeout(deleteLoop, 22);
+      } else {
+        i++;
+        setTimeout(typeLoop, 200);
+      }
+    }
+    typeLoop();
+
+    // Download PDF (file must be in same folder)
+    function downloadPDF(){
+      const url = 'cv-tri-nerry.pdf';
+      window.open(url, '_blank') || alert('Pastikan file cv-tri-nerry.pdf ada di folder yang sama dengan index.html');
+    }
+
+    // Simple theme toggle (invert colors a bit)
+    function toggleTheme(){
+      const root = document.documentElement;
+      if(root.style.getPropertyValue('--bg') === 'rgb(4, 6, 8)'){
+        // lighten
+        root.style.setProperty('--bg','#f5f7f8');
+        root.style.setProperty('--panel','#ffffff');
+        root.style.setProperty('--muted','#4b5563');
+        root.style.setProperty('--accent','#006b5f');
+        document.body.style.color = '#022';
+      } else {
+        root.style.setProperty('--bg','#040608');
+        root.style.setProperty('--panel','#071018');
+        root.style.setProperty('--muted','#8aa0a0');
+        root.style.setProperty('--accent','#3be6b0');
+        document.body.style.color = '#cfeee6';
+      }
+    }
+  </script>
+</body>
+</html>
