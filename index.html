@@ -1,84 +1,125 @@
 <!doctype html>
 <html lang="id">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>erry triranaya — Terminal CV</title>
-  <meta name="description" content="CV erry triranaya — Hacker / Terminal style" />
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="wrap">
-    <div class="grid">
-      <!-- LEFT: Terminal / Code -->
-      <div class="terminal" aria-live="polite">
-        <div class="term-header">
-          <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-          <div style="margin-left:8px;color:var(--muted);font-size:12px">TriNerry@local: ~ /cv</div>
-        </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>erry triranaya — Terminal CV</title>
+    <meta
+      name="description"
+      content="CV erry triranaya — Hacker / Terminal style"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-        <div class="term-body">
-          <div class="prompt">&gt; <span class="c"># membuka profil</span></div>
-          <div class="code" id="typed-area">
-<span class="k">const</span> <span class="n">profile</span> = <span class="s">&#123;</span>
-  <span class="c">// nama & role</span>
-  <span class="n">name</span>: <span class="s">"erry triranaya"</span>,
-  <span class="n">role</span>: <span class="s">"IT / Software • Security"</span>,
-
-  <span class="c">// skills</span>
-  <span class="n">skills</span>: <span class="s">["Python","Docker","Kubernetes","Linux","Pentest"]</span>,
-
-  <span class="c">// projects</span>
-  <span class="n">projects</span>: <span class="s">[
-    "Automation CI/CD", "Secure Web App"
-  ]</span>
-<span class="s">&#125;</span>
-
-<span class="c">// tekan tombol untuk download CV</span>
+  <body>
+    <div class="wrap">
+      <div class="grid">
+        <!-- LEFT: Terminal / Code -->
+        <div class="terminal" aria-live="polite">
+          <div class="term-header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <div
+              style="margin-left: 8px; color: var(--muted); font-size: 12px"
+            >
+              TriNerry@local: ~ /cv
+            </div>
           </div>
 
-          <div style="margin-top:12px" class="prompt">&gt; <span class="c"># live preview</span></div>
-          <div style="margin-top:8px;color:var(--muted);font-size:13px">
-            <span class="typed" id="line1"></span><span class="cursor" id="cursor1"></span>
+          <div class="term-body">
+            <div class="prompt">
+              &gt; <span class="c"># membuka profil</span>
+            </div>
+
+            <div class="code" id="typed-area">
+              <span class="k">const</span> <span class="n">profile</span>
+              = <span class="s">&#123;</span>
+              <br />
+              &nbsp;&nbsp;<span class="c">// nama &amp; role</span><br />
+              &nbsp;&nbsp;<span class="n">name</span>:
+              <span class="s">"erry triranaya"</span>,<br />
+              &nbsp;&nbsp;<span class="n">role</span>:
+              <span class="s">"IT / Software • Security"</span>,<br /><br />
+
+              &nbsp;&nbsp;<span class="c">// skills</span><br />
+              &nbsp;&nbsp;<span class="n">skills</span>:
+              <span class="s">["Python","Docker","Kubernetes","Linux","Pentest"]</span>,<br /><br />
+
+              &nbsp;&nbsp;<span class="c">// projects</span><br />
+              &nbsp;&nbsp;<span class="n">projects</span>:
+              <span class="s">[ "Automation CI/CD", "Secure Web App" ]</span><br />
+              <span class="s">&#125;</span><br /><br />
+
+              <span class="c">// tekan tombol untuk download CV</span>
+            </div>
+
+            <div class="prompt" style="margin-top: 12px">
+              &gt; <span class="c"># live preview</span>
+            </div>
+
+            <div
+              style="margin-top: 8px; color: var(--muted); font-size: 13px"
+            >
+              <span class="typed" id="line1"></span>
+              <span class="cursor" id="cursor1"></span>
+            </div>
           </div>
         </div>
+
+        <!-- RIGHT: Profile card -->
+        <aside class="card">
+          <div style="display: flex; gap: 12px; align-items: center">
+            <div class="avatar" id="avatar">TN</div>
+            <div>
+              <h1 id="fullname">Erry Triranaya</h1>
+              <div class="role" id="role">
+                IT • Web development • finance
+              </div>
+            </div>
+          </div>
+
+          <div class="section-title">About</div>
+          <div class="meta" id="bio">
+            Seorang engineer yang fokus belajar supaya lebih baik
+          </div>
+
+          <div class="section-title">Top Skills</div>
+          <div class="chips" id="skills">
+            <div class="chip">html</div>
+            <div class="chip">finance</div>
+            <div class="chip">engineer electrical</div>
+            <div class="chip">windows</div>
+          </div>
+
+          <div class="section-title">Contact</div>
+          <div class="meta">
+            <div>
+              Email:
+              <a href="mailto:errytriranaya22@gmail.com">
+                errytriranaya22@gmail.com
+              </a>
+            </div>
+            <div>
+              GitHub:
+              <a href="https://github.com/Skyangle1" target="_blank">
+                github.com/Skyangle1
+              </a>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn primary" onclick="downloadPDF()">
+              Download CV (PDF)
+            </button>
+            <button class="btn" onclick="toggleTheme()">
+              Switch Theme
+            </button>
+          </div>
+        </aside>
       </div>
-
-      <!-- RIGHT: Profile card -->
-      <aside class="card">
-        <div style="display:flex;gap:12px;align-items:center">
-          <div class="avatar" id="avatar">TN</div>
-          <div>
-            <h1 id="fullname">Erry Triranaya</h1>
-            <div class="role" id="role">IT • Web development • finance</div>
-          </div>
-        </div>
-
-        <div class="section-title">About</div>
-        <div class="meta" id="bio">Seorang engineer yang fokus belajar supaya lebih baik</div>
-
-        <div class="section-title">Top Skills</div>
-        <div class="chips" id="skills">
-          <div class="chip">html</div>
-          <div class="chip">finance</div>
-          <div class="chip">engineer electrical</div>
-          <div class="chip">windows</div>
-        </div>
-
-        <div class="section-title">Contact</div>
-        <div class="meta">
-          <div>Email: <a href="mailto:errytriranaya22@gmail.com">errytriranaya22@gmail.com</a></div>
-          <div>GitHub: <a href="https://github.com/Skyangle1" target="_blank">github.com/Skyangle1</a></div>
-        </div>
-
-        <div class="actions">
-          <button class="btn primary" onclick="downloadPDF()">Download CV (PDF)</button>
-          <button class="btn" onclick="toggleTheme()">Switch Theme</button>
-        </div>
-      </aside>
     </div>
-  </div>
 
-  <script src="main.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
